@@ -5,11 +5,7 @@ $(()=>{
  let btnRemove = $('#btn-remove') 
 
 
-
-
-
-
- function addItem() {
+function addItem() {
     let inpTask= $('#inpTask').val()
     let item=$('<li>').addClass("list-group-item").html('<input type="checkbox"> '+`<span>${inpTask}</span>`)
     
@@ -17,11 +13,19 @@ $(()=>{
     list.append(item)
     
     let itemSpan=$('#list li span')
-    itemSpan.click(()=>{
-        let inp=  $('#inpTask').val()
-       itemSpan.text(inp)
-    })
+   //  itemSpan.click(()=>{
+   //      let inp=  $('#inpTask').val()
+   //     itemSpan.text(inp)
+   //  })
+   
 
+
+itemSpan.on('click', function(event) {
+     event.preventDefault()
+     let Task= $('#inpTask').val()
+     let target= $(event.target)
+     target.text(Task)
+})
 
 
  }
