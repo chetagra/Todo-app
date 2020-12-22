@@ -13,11 +13,7 @@ function addItem() {
     list.append(item)
     
     let itemSpan=$('#list li span')
-   //  itemSpan.click(()=>{
-   //      let inp=  $('#inpTask').val()
-   //     itemSpan.text(inp)
-   //  })
-   
+  
 
 
 itemSpan.on('click', function(event) {
